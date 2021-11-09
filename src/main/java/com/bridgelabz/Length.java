@@ -6,6 +6,16 @@ package com.bridgelabz;
  * @since -> 09/11/2021
  */
 public class Length {
+    private static final double FEET_TO_INCH = 12.0;
+
+    public boolean compare(Length that) {
+        if (this.unit.equals(that.unit))
+            return this.equals(that);
+        if (this.unit.equals(Unit.FEET) && that.unit.equals(Unit.INCH))
+            return Double.compare(this.value * FEET_TO_INCH, that.value) == 0;
+        return false;
+    }
+
     enum Unit {FEET, INCH}
 
     private final Unit unit;

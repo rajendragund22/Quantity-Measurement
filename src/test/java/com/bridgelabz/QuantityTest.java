@@ -100,4 +100,11 @@ public class QuantityTest {
         Length feet = new Length(Length.Unit.FEET, 1.0);
         Assert.assertNotEquals(feet,inch);
     }
+    @Test
+    public void given0InchAnd0Feet_ShouldReturnEqual() {
+        Length inch1 = new Length(Length.Unit.INCH, 0.0);
+        Length feet1 = new Length(Length.Unit.FEET, 0.0);
+        boolean compareCheck= feet1.compare(inch1);
+        Assert.assertTrue(compareCheck);
+    }
 }
