@@ -158,9 +158,16 @@ public class QuantityTest {
     }
 
     @Test
-   public void given0YardAnd1Yard_ShouldReturnNotEqual() {
+    public void given0YardAnd1Yard_ShouldReturnNotEqual() {
         Yard yard1 = new Yard(0);
         Yard yard2 = new Yard(1);
         Assert.assertNotEquals(yard1, yard2);
+    }
+
+    @Test
+    public void givenYardAndYardFromSameRef_WhenEqual_ShouldReturnTure() {
+        Yard yard1 = new Yard(0);
+        boolean result = yard1 == yard1;
+        Assert.assertTrue(result);
     }
 }
