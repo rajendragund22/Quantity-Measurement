@@ -142,4 +142,12 @@ public class QuantityTest {
         boolean compareCheck = inch1.compare(inch2);
         Assert.assertTrue(compareCheck);
     }
+
+    @Test
+    public void givenYardAndNull_ShouldReturnNotEqual() {
+        Yard yard1 = new Yard(0.0);
+        Yard yard2 = null;
+        Assert.assertNotEquals(yard1, yard2);
+    }
+
 }

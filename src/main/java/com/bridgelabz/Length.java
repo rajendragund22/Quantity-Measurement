@@ -34,6 +34,8 @@ public class Length {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Length)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
+        Yard yard1 = (Yard) o;
         Length length = (Length) o;
         return Double.compare(length.value, value) == 0 && unit == length.unit;
     }
