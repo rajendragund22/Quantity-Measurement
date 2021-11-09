@@ -1,7 +1,12 @@
 package com.bridgelabz;
 
+/**
+ * @author -> Rajendra Gund
+ * @version -> 1.0
+ * @since -> 09/11/2021
+ */
 public class Feet {
-    public final double value;
+    private final double value;
 
     public Feet(double value) {
         this.value = value;
