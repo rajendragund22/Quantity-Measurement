@@ -42,43 +42,50 @@ public class QuantityTest {
 
     @Test
     public void given0InchAnd0Inch_ShouldReturnEqual() {
-        Length inch1 = new Length(Length.Unit.INCH,0.0);
-        Length inch2 = new Length(Length.Unit.INCH,0.0);
+        Length inch1 = new Length(Length.Unit.INCH, 0.0);
+        Length inch2 = new Length(Length.Unit.INCH, 0.0);
         Assert.assertEquals(inch1, inch2);
     }
 
     @Test
     public void given0Inchand1Inch_ShouldReturnNotEqual() {
-        Length inch1 = new Length(Length.Unit.INCH,0.0);
-        Length inch2 = new Length(Length.Unit.INCH,1.0);
+        Length inch1 = new Length(Length.Unit.INCH, 0.0);
+        Length inch2 = new Length(Length.Unit.INCH, 1.0);
         Assert.assertNotEquals(inch1, inch2);
     }
 
     @Test
     public void given0InchandNullInch_ShouldReturnNotEqual() {
-        Length inch1 = new Length(Length.Unit.INCH,0.0);
+        Length inch1 = new Length(Length.Unit.INCH, 0.0);
         Length inch2 = null;
         Assert.assertNotEquals(inch1, inch2);
     }
 
     @Test
     public void givenInchandInchFromSameRefAreEqual_ShouldReturnTrue() {
-        Length inch1 = new Length(Length.Unit.INCH,0);
+        Length inch1 = new Length(Length.Unit.INCH, 0);
         boolean result = inch1 == inch1;
         Assert.assertTrue(result);
     }
 
     @Test
     public void given0Inchand0InchFromDifferentType_ShouldReturnNotSame() {
-        Length inch1 = new Length(Length.Unit.INCH,0.0);
-        Length inch2 = new Length(Length.Unit.INCH,0);
+        Length inch1 = new Length(Length.Unit.INCH, 0.0);
+        Length inch2 = new Length(Length.Unit.INCH, 0);
         Assert.assertNotSame(inch1, inch2);
     }
+
     @Test
     public void given1InchAnd2Inch_ShouldReturnNotEqual() {
-        Length inch1 = new Length(Length.Unit.INCH,1.0);
-        Length inch2 = new Length(Length.Unit.INCH,2.0);
+        Length inch1 = new Length(Length.Unit.INCH, 1.0);
+        Length inch2 = new Length(Length.Unit.INCH, 2.0);
         Assert.assertNotEquals(inch1, inch2);
     }
 
+    @Test
+    public void given0InchAnd0Feet_ShouldReturnNotEqual() {
+        Length inch = new Length(Length.Unit.INCH, 0.0);
+        Length feet = new Length(Length.Unit.FEET, 0.0);
+        Assert.assertNotEquals(inch, feet);
+    }
 }
