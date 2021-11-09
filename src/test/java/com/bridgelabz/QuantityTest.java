@@ -74,4 +74,11 @@ public class QuantityTest {
         Length inch2 = new Length(Length.Unit.INCH,0);
         Assert.assertNotSame(inch1, inch2);
     }
+    @Test
+    public void given1InchAnd2Inch_ShouldReturnNotEqual() {
+        Length inch1 = new Length(Length.Unit.INCH,1.0);
+        Length inch2 = new Length(Length.Unit.INCH,2.0);
+        Assert.assertNotEquals(inch1, inch2);
+    }
+
 }
