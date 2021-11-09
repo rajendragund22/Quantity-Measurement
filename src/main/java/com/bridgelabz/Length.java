@@ -40,6 +40,8 @@ public class Length {
             return Double.compare(this.value * YARD_TO_INCH, that.value) == 0;
         if (this.unit.equals(Unit.INCH) && that.unit.equals(Unit.CENTI_METER))
             return Double.compare(this.value * INCH_TO_CM, that.value) == 0;
+        if (this.unit.equals(Unit.CENTI_METER) && that.unit.equals(Unit.INCH))
+            return Double.compare(this.value, that.value * INCH_TO_CM) == 0;
         return false;
     }
 

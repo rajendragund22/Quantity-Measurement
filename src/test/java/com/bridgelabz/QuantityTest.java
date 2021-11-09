@@ -209,4 +209,12 @@ public class QuantityTest {
         Length cm2 = new Length(Length.Unit.CENTI_METER, 0.0);
         Assert.assertEquals(cm1, cm2);
     }
+
+    @Test
+    public void given2InchAnd5Cm_WhenCompared_ShouldReturnEqualLength() {
+        Length inch = new Length(Length.Unit.INCH, 2.0);
+        Length cm = new Length(Length.Unit.CENTI_METER, 5.0);
+        boolean compareCheck = inch.compare(cm);
+        Assert.assertTrue(compareCheck);
+    }
 }
