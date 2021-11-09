@@ -156,4 +156,11 @@ public class QuantityTest {
         Yard yard2 = new Yard(0);
         Assert.assertEquals(yard1, yard2);
     }
+
+    @Test
+   public void given0YardAnd1Yard_ShouldReturnNotEqual() {
+        Yard yard1 = new Yard(0);
+        Yard yard2 = new Yard(1);
+        Assert.assertNotEquals(yard1, yard2);
+    }
 }
