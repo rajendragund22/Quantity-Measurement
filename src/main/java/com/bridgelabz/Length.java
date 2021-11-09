@@ -6,7 +6,11 @@ package com.bridgelabz;
  * @since -> 09/11/2021
  */
 public class Length {
+
+    enum Unit {FEET, INCH, YARD}
+
     private static final double FEET_TO_INCH = 12.0;
+    private static final double YARD_TO_FEET = 3.0;
 
     public boolean compare(Length that) {
         if (this.unit.equals(that.unit))
@@ -17,10 +21,11 @@ public class Length {
             return Double.compare(this.value, that.value) == 0;
         if (this.unit.equals(Unit.INCH) && that.unit.equals(Unit.FEET))
             return Double.compare(this.value, that.value * FEET_TO_INCH) == 0;
+        if (this.unit.equals(Unit.FEET) && that.unit.equals(Unit.YARD))
+            return Double.compare(this.value, that.value * YARD_TO_FEET) == 0;
         return false;
     }
 
-    enum Unit {FEET, INCH}
 
     private final Unit unit;
     private final double value;
