@@ -366,4 +366,11 @@ public class QuantityTest {
         Weight actualSum = tonne.sumOfWeight(gram);
         Assert.assertEquals(expectedSum, actualSum);
     }
+
+    @Test
+    public void given0FahrenheitAnd0Fahrenheit_ShouldReturnEqualTemperature() {
+        Temperature temp1 = new Temperature(Temperature.Unit.FAHRENHEIT, 0.0);
+        Temperature temp2 = new Temperature(Temperature.Unit.FAHRENHEIT, 0.0);
+        Assert.assertEquals(temp1, temp2);
+    }
 }

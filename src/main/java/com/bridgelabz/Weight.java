@@ -29,10 +29,10 @@ public class Weight {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Weight)) return false;
-        Weight weight = (Weight) o;
+    public boolean equals(Object that) {
+        if (this == that) return true;
+        if (!(that instanceof Weight)) return false;
+        Weight weight = (Weight) that;
         return Double.compare(weight.value, value) == 0 && unit == weight.unit;
     }
 }
