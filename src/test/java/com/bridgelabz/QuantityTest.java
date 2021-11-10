@@ -300,4 +300,12 @@ public class QuantityTest {
         boolean compareCheck = liter.compare(gallon);
         Assert.assertTrue(compareCheck);
     }
+
+    @Test
+    public void given1LiterAnd1000MilliLiter_WhenCompared_ShouldReturnEqualVolume() {
+        Volume liter = new Volume(Volume.Unit.LITER, 1.0);
+        Volume ml = new Volume(Volume.Unit.MILLI_LITER, 1000.0);
+        boolean compareCheck = liter.compare(ml);
+        Assert.assertTrue(compareCheck);
+    }
 }
