@@ -1,7 +1,7 @@
 package com.bridgelabz;
 
 public class Temperature {
-    public enum Unit {FAHRENHEIT}
+    public enum Unit {FAHRENHEIT, CELSIUS}
 
     private final Unit unit;
     private final double temp;
@@ -9,6 +9,12 @@ public class Temperature {
     public Temperature(Unit unit, double temp) {
         this.unit = unit;
         this.temp = temp;
+    }
+
+    public boolean compare(Temperature that) {
+        if (this.unit.equals(Unit.FAHRENHEIT) && that.unit.equals(Unit.CELSIUS))
+            return Double.compare((this.temp - 32) * 5 / 9, that.temp) == 0;
+        return false;
     }
 
     @Override

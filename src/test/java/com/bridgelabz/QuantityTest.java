@@ -373,4 +373,12 @@ public class QuantityTest {
         Temperature temp2 = new Temperature(Temperature.Unit.FAHRENHEIT, 0.0);
         Assert.assertEquals(temp1, temp2);
     }
+
+    @Test
+    public void given212FahrenheitAnd100Celsius_WhenCompared_ShouldReturnEqualTemp() {
+        Temperature fahrenheit = new Temperature(Temperature.Unit.FAHRENHEIT, 212.0);
+        Temperature celsius = new Temperature(Temperature.Unit.CELSIUS, 100.0);
+        boolean compareCheck = fahrenheit.compare(celsius);
+        Assert.assertTrue(compareCheck);
+    }
 }
