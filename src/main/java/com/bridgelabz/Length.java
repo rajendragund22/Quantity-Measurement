@@ -49,6 +49,8 @@ public class Length {
         double sumOfInput = 0.0;
         if (this.unit.equals(Unit.INCH) && that.unit.equals(Unit.INCH))
             sumOfInput = this.value + that.value;
+        else if (this.unit.equals(Unit.FEET) && that.unit.equals(Unit.INCH))
+            sumOfInput = this.value * FEET_TO_INCH + that.value;
         return new Length(Unit.INCH, sumOfInput);
     }
 
