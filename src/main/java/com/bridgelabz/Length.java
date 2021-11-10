@@ -45,6 +45,14 @@ public class Length {
         return false;
     }
 
+    public Length sumOfLength(Length that) {
+        double sumOfInput = 0.0;
+        if (this.unit.equals(Unit.INCH) && that.unit.equals(Unit.INCH))
+            sumOfInput = this.value + that.value;
+        return new Length(Unit.INCH, sumOfInput);
+    }
+
+
     @Override
     public boolean equals(Object that) {
         if (this == that) return true;
