@@ -1,8 +1,10 @@
 package com.bridgelabz;
 
 public class Weight {
-    enum Unit {GRAM, KILOGRAM}
-    private static final double KILO_GRAM_TO_GRAM =1000.0 ;
+    enum Unit {GRAM, KILOGRAM, TONNE}
+
+    private static final double TONNE_TO_KILO_GRAM = 1000.0;
+    private static final double KILO_GRAM_TO_GRAM = 1000.0;
     private final Unit unit;
     private final double value;
 
@@ -14,6 +16,8 @@ public class Weight {
     public boolean compare(Weight that) {
         if (this.unit.equals(Unit.KILOGRAM) && that.unit.equals(Unit.GRAM))
             return Double.compare(this.value * KILO_GRAM_TO_GRAM, that.value) == 0;
+        if (this.unit.equals(Unit.TONNE) && that.unit.equals(Unit.KILOGRAM))
+            return Double.compare(this.value * TONNE_TO_KILO_GRAM, that.value) == 0;
         return false;
     }
 
