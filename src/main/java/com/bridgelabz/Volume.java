@@ -1,14 +1,23 @@
 package com.bridgelabz;
 
 public class Volume {
-    enum Unit {GALLON,LITER}
+    enum Unit {GALLON, LITER}
 
+    private static final double GALLON_TO_LITER = 3.78;
     private final double value;
     private final Unit unit;
 
     public Volume(Unit unit, double value) {
         this.value = value;
         this.unit = unit;
+    }
+
+    public boolean compare(Volume that) {
+        if (this.unit.equals(that.unit))
+            return this.equals(that);
+        if (this.unit.equals(Unit.GALLON) && that.unit.equals(Unit.LITER))
+            return Double.compare(this.value * GALLON_TO_LITER, that.value) == 0;
+        return false;
     }
 
     @Override

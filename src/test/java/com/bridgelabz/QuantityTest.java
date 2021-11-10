@@ -270,17 +270,25 @@ public class QuantityTest {
         Length actualSum = inch.sumOfLength(cm);
         Assert.assertEquals(expectedSum, actualSum);
     }
+
     @Test
-   public void given0GallonAnd0Gallon_ShouldReturnEqualVolume() {
+    public void given0GallonAnd0Gallon_ShouldReturnEqualVolume() {
         Volume gallon1 = new Volume(Volume.Unit.GALLON, 0.0);
         Volume gallon2 = new Volume(Volume.Unit.GALLON, 0.0);
         Assert.assertEquals(gallon1, gallon2);
     }
+
     @Test
     public void give0LiterAnd0Liter_ShouldReturnEqualVolume() {
         Volume liter1 = new Volume(Volume.Unit.LITER, 0.0);
         Volume liter2 = new Volume(Volume.Unit.LITER, 0.0);
         Assert.assertEquals(liter1, liter2);
     }
-
+    @Test
+    public void given1GallonAnd3$78Liter_WhenCompared_ShouldReturnEqualVolume() {
+        Volume gallon = new Volume(Volume.Unit.GALLON, 1.0);
+        Volume liter = new Volume(Volume.Unit.LITER, 3.78);
+        boolean compareCheck = gallon.compare(liter);
+        Assert.assertTrue(compareCheck);
+    }
 }
