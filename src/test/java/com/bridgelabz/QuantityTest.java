@@ -316,4 +316,13 @@ public class QuantityTest {
         boolean compareCheck = ml.compare(liter);
         Assert.assertTrue(compareCheck);
     }
+
+    @Test
+    public void given1GallonAnd3$78Liter_WhenAdded_ShouldReturn7$57Liter() {
+        Volume gallon = new Volume(Volume.Unit.GALLON, 1.0);
+        Volume liter = new Volume(Volume.Unit.LITER, 3.78);
+        Volume expectedSum = new Volume(Volume.Unit.LITER, 7.56);
+        Volume actualSum = gallon.sumOfVolume(liter);
+        Assert.assertEquals(expectedSum, actualSum);
+    }
 }
