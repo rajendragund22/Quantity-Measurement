@@ -17,6 +17,8 @@ public class Volume {
             return this.equals(that);
         if (this.unit.equals(Unit.GALLON) && that.unit.equals(Unit.LITER))
             return Double.compare(this.value * GALLON_TO_LITER, that.value) == 0;
+        if (this.unit.equals(Unit.LITER) && that.unit.equals(Unit.GALLON))
+            return Double.compare(this.value, that.value * GALLON_TO_LITER) == 0;
         return false;
     }
 

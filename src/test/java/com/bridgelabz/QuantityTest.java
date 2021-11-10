@@ -284,11 +284,20 @@ public class QuantityTest {
         Volume liter2 = new Volume(Volume.Unit.LITER, 0.0);
         Assert.assertEquals(liter1, liter2);
     }
+
     @Test
     public void given1GallonAnd3$78Liter_WhenCompared_ShouldReturnEqualVolume() {
         Volume gallon = new Volume(Volume.Unit.GALLON, 1.0);
         Volume liter = new Volume(Volume.Unit.LITER, 3.78);
         boolean compareCheck = gallon.compare(liter);
+        Assert.assertTrue(compareCheck);
+    }
+
+    @Test
+    public void given3$78LiterAnd1Gallon_WhenCompared_ShouldReturnEqualVolume() {
+        Volume liter = new Volume(Volume.Unit.LITER, 3.78);
+        Volume gallon = new Volume(Volume.Unit.GALLON, 1.0);
+        boolean compareCheck = liter.compare(gallon);
         Assert.assertTrue(compareCheck);
     }
 }
