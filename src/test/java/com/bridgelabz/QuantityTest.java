@@ -253,4 +253,12 @@ public class QuantityTest {
         Assert.assertEquals(expectedSum, actualSum);
     }
 
+    @Test
+    public void given2Inch2$5Cm_WhenAdded_ShouldReturn3Inch() {
+        Length inch = new Length(Length.Unit.INCH, 2.0);
+        Length cm = new Length(Length.Unit.CENTI_METER, 2.5);
+        Length expectedSum = new Length(Length.Unit.INCH, 3.0);
+        Length actualSum = inch.sumOfLength(cm);
+        Assert.assertEquals(expectedSum, actualSum);
+    }
 }
