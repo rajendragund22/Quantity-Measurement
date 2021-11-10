@@ -1,7 +1,7 @@
 package com.bridgelabz;
 
 public class Volume {
-    enum Unit {GALLON,}
+    enum Unit {GALLON,LITER}
 
     private final double value;
     private final Unit unit;
